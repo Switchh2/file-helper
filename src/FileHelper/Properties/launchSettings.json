@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FileHelper (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FileHelper (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
