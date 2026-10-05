@@ -1,0 +1,2 @@
+# Local build/run logs may contain machine-specific paths. Never commit them.
+/.local/

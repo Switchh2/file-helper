@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <data name="PageTitle.Text" xml:space="preserve">
+    <value>File Helper</value>
+  </data>
+  <data name="SelectFolderButton.Content" xml:space="preserve">
+    <value>Select folder</value>
+  </data>
+  <data name="FolderStatus.Text" xml:space="preserve">
+    <value>No folder selected yet.</value>
+  </data>
+  <data name="FileList.Header" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="LoadingFiles" xml:space="preserve">
+    <value>{0}
+Loading files...</value>
+    <comment>{0}: selected folder path; preserve the line break.</comment>
+  </data>
+  <data name="FileCount" xml:space="preserve">
+    <value>Files ({0})</value>
+    <comment>{0}: number of files.</comment>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>{0}
+There are no files directly inside this folder.</value>
+    <comment>{0}: selected folder path; preserve the line break.</comment>
+  </data>
+  <data name="FolderAccessDenied" xml:space="preserve">
+    <value>You don't have permission to access this folder. Select another folder.</value>
+  </data>
+  <data name="FolderReadFailed" xml:space="preserve">
+    <value>Couldn't read the folder. Check that the folder or drive is available.</value>
+  </data>
+  <data name="FolderOpenFailed" xml:space="preserve">
+    <value>Couldn't open the folder. Please try again.</value>
+  </data>
+  <data name="FileNameColumn.Text" xml:space="preserve"><value>Name</value></data>
+  <data name="FileSizeColumn.Text" xml:space="preserve"><value>Size</value></data>
+  <data name="FileModifiedColumn.Text" xml:space="preserve"><value>Date modified</value></data>
+  <data name="SortSelector.Header" xml:space="preserve"><value>Sort by</value></data>
+  <data name="SortByName.Content" xml:space="preserve"><value>Name (ascending)</value></data>
+  <data name="SortBySize.Content" xml:space="preserve"><value>Size (largest first)</value></data>
+  <data name="SortByModified.Content" xml:space="preserve"><value>Modified (newest first)</value></data>
+  <data name="PageSubtitle.Text" xml:space="preserve"><value>A clear view of the files in your folder.</value></data>
+  <data name="FolderSectionTitle.Text" xml:space="preserve"><value>Folder to explore</value></data>
+  <data name="EmptyListTitle.Text" xml:space="preserve"><value>No files to display</value></data>
+  <data name="EmptyListHint.Text" xml:space="preserve"><value>Choose a folder containing files to see them here.</value></data>
+  <data name="ReadOnlyNote.Text" xml:space="preserve"><value>Only files directly inside the selected folder are shown. Files are not moved or changed.</value></data>
+</root>
