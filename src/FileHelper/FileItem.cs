@@ -1,12 +1,27 @@
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 
 namespace FileHelper;
 
 // A snapshot of one file's metadata. File contents are never opened here.
-public sealed class FileItem
+public sealed class FileItem : INotifyPropertyChanged
 {
+    private bool _isIncluded;
+    // UI state only; AnalysisPreview explicitly excludes it from the API payload.
+    public bool IsIncluded
+    {
+        get => _isIncluded;
+        internal set
+        {
+            if (_isIncluded == value) return;
+            _isIncluded = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsIncluded)));
+        }
+    }
+    public event PropertyChangedEventHandler? PropertyChanged;
+
     public string Name { get; }
     public long? SizeBytes { get; }
     public DateTime? ModifiedAt { get; }

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/FileHelper/MainPage.xaml.cs" Link="MainPage.xaml.cs" />
+    <Compile Include="../../src/FileHelper/FileItem.cs" Link="FileItem.cs" />
+    <Compile Include="../../src/FileHelper/FileCategory.cs" Link="FileCategory.cs" />
+    <Compile Include="../../src/FileHelper/AppText.cs" Link="AppText.cs" />
+    <Compile Include="../../src/FileHelper/AnalysisPreview.cs" Link="AnalysisPreview.cs" />
+    <Compile Include="../../src/FileHelper/FileAnalysisClient.cs" Link="FileAnalysisClient.cs" />
+    <Compile Include="../../src/FileHelper/MainPage.Analysis.cs" Link="MainPage.Analysis.cs" />
+    <Content Include="../../src/FileHelper/Strings/**/*.resw" Link="Strings/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

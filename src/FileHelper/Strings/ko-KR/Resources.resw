@@ -9,7 +9,7 @@
     <value>폴더 선택</value>
   </data>
   <data name="FolderStatus.Text" xml:space="preserve">
-    <value>아직 선택한 폴더가 없습니다.</value>
+    <value>파일 또는 폴더를 선택해주세요.</value>
   </data>
   <data name="FileList.Header" xml:space="preserve">
     <value>파일 목록</value>
@@ -45,8 +45,68 @@
   <data name="SortBySize.Content" xml:space="preserve"><value>크기순 (큰 파일부터)</value></data>
   <data name="SortByModified.Content" xml:space="preserve"><value>수정일순 (최근 파일부터)</value></data>
   <data name="PageSubtitle.Text" xml:space="preserve"><value>폴더 속 파일을 한눈에 살펴보세요.</value></data>
-  <data name="FolderSectionTitle.Text" xml:space="preserve"><value>살펴볼 폴더</value></data>
+  <data name="FolderSectionTitle.Text" xml:space="preserve"><value>살펴볼 파일</value></data>
   <data name="EmptyListTitle.Text" xml:space="preserve"><value>표시할 파일이 없습니다</value></data>
-  <data name="EmptyListHint.Text" xml:space="preserve"><value>파일이 있는 폴더를 선택하면 여기에 목록이 표시됩니다.</value></data>
-  <data name="ReadOnlyNote.Text" xml:space="preserve"><value>선택한 폴더 바로 안의 파일만 표시합니다. 파일은 이동하거나 변경하지 않습니다.</value></data>
+  <data name="EmptyListHint.Text" xml:space="preserve"><value>파일을 직접 고르거나 파일이 있는 폴더를 선택해주세요.</value></data>
+  <data name="ReadOnlyNote.Text" xml:space="preserve"><value>직접 고른 파일 또는 선택한 폴더 바로 안의 파일만 표시합니다. 파일은 실행·이동·변경하지 않습니다.</value></data>
+  <data name="PreviewButton.Content" xml:space="preserve"><value>AI 전달 정보 미리보기</value></data>
+  <data name="ClearSelectionButton.Content" xml:space="preserve"><value>선택 해제</value></data>
+  <data name="PreviewLocalOnly.Text" xml:space="preserve"><value>미리보기에서 확인 후 전송을 눌러야 OpenAI 분석이 실행됩니다. 파일명에도 개인정보가 있을 수 있습니다.</value></data>
+  <data name="PreviewSelectionCount" xml:space="preserve"><value>{0}개 선택 · 최대 {1}개까지 미리보기</value></data>
+  <data name="PreviewLimitExceeded" xml:space="preserve"><value>{0}개 선택됨. 최대 {1}개까지 확인할 수 있으니 선택을 줄여주세요.</value></data>
+  <data name="PreviewDialogTitle" xml:space="preserve"><value>AI 전달 정보 미리보기</value></data>
+  <data name="PreviewPrivacyNotice" xml:space="preserve"><value>아직 아무 정보도 전송하지 않았습니다. 파일명에도 이름·업무 내용 등 개인정보가 포함될 수 있으니 확인해주세요. 이 창을 닫아도 전송되지 않습니다.</value></data>
+  <data name="PreviewFieldsNotice" xml:space="preserve"><value>포함: 파일명, 확장자, 바이트 크기, 수정일(로컬 시각).
+제외: 전체 경로, 파일 내용. 확인하지 못한 값은 null입니다.
+폴더를 읽었던 시점의 정보입니다. 이 정보만 전송하며 파일 내용은 읽지 않습니다.</value></data>
+  <data name="PreviewPayloadHeader" xml:space="preserve"><value>선택한 {0}개 파일의 정보</value></data>
+  <data name="PreviewClose" xml:space="preserve"><value>닫기</value></data>
+  <data name="PreviewFailed" xml:space="preserve"><value>미리보기를 열지 못했습니다. 선택을 확인하고 다시 시도해주세요.</value></data>
+  <data name="ResultsButton.Content" xml:space="preserve"><value>분석 결과 보기</value></data>
+  <data name="CancelAnalysisButton.Content" xml:space="preserve"><value>분석 취소</value></data>
+  <data name="AiLanguage" xml:space="preserve"><value>ko</value></data>
+  <data name="AiKeyHeader" xml:space="preserve"><value>API 키 — 이번 요청에만 사용, 비워두면 환경변수 사용</value></data>
+  <data name="AiConsent" xml:space="preserve"><value>‘OpenAI로 전송·분석’을 누르면 위 파일 정보가 OpenAI에 전송되고 API 요금이 발생합니다. Sol · medium · 최대 출력 4,096토큰, 자동 재시도 없음. 키와 결과는 앱에서 파일로 저장하지 않습니다.</value></data>
+  <data name="AiSend" xml:space="preserve"><value>OpenAI로 전송·분석</value></data>
+  <data name="AiDisclaimer" xml:space="preserve"><value>AI 추정 결과입니다. 파일 내용을 읽지 않았으며, 정리 검토 우선순위이지 삭제 안전성 판단이 아닙니다. 중요한 파일과 백업 여부를 직접 확인하세요.</value></data>
+  <data name="AiWorking" xml:space="preserve"><value>분석 중… 최대 약 90초 기다립니다. 자동 재시도하지 않습니다.</value></data>
+  <data name="AiDone" xml:space="preserve"><value>분석이 완료됐습니다. ‘분석 결과 보기’로 재요청 없이 다시 볼 수 있습니다.</value></data>
+  <data name="AiResultsTitle" xml:space="preserve"><value>파일별 분석 결과 · AI 추정</value></data>
+  <data name="AiResultLine" xml:space="preserve"><value>[{0}] {1}</value></data>
+  <data name="AiPriority_review" xml:space="preserve"><value>정리 검토 후보</value></data>
+  <data name="AiPriority_keep" xml:space="preserve"><value>중요할 가능성 · 정리 후순위</value></data>
+  <data name="AiPriority_uncertain" xml:space="preserve"><value>판단 보류</value></data>
+  <data name="AiMissingKey" xml:space="preserve"><value>API 키가 없습니다. 미리보기를 다시 열어 키를 입력하세요. 전송하지 않았습니다.</value></data>
+  <data name="AiAuthError" xml:space="preserve"><value>키가 유효하지 않거나 권한이 없습니다. 키 만료와 Responses Write 권한을 확인하세요.</value></data>
+  <data name="AiLimitError" xml:space="preserve"><value>잔액·사용 한도 또는 요청 빈도 제한을 확인하세요. 자동 재시도하지 않았습니다.</value></data>
+  <data name="AiModelError" xml:space="preserve"><value>현재 프로젝트에서 해당 모델을 사용할 수 있는지 확인하세요.</value></data>
+  <data name="AiRequestError" xml:space="preserve"><value>분석을 완료하지 못했습니다. 자동 재시도하지 않았습니다. 재요청 전 사용량을 확인하세요.</value></data>
+  <data name="AiNetworkError" xml:space="preserve"><value>네트워크 연결에 실패했습니다. 서버에서 처리됐을 수 있으므로 재요청 전 사용량을 확인하세요.</value></data>
+  <data name="AiTimeout" xml:space="preserve"><value>응답 대기 시간이 초과됐습니다. 서버 처리는 계속될 수 있으며 요금이 발생할 수 있습니다.</value></data>
+  <data name="AiCancelled" xml:space="preserve"><value>응답 대기를 취소했습니다. 서버 처리가 취소된다는 보장은 없으며 요금이 발생할 수 있습니다.</value></data>
+  <data name="AiIncomplete" xml:space="preserve"><value>응답이 끝까지 생성되지 않아 결과를 표시하지 않았습니다. 자동 재시도하지 않았습니다.</value></data>
+  <data name="AiRefused" xml:space="preserve"><value>모델이 분석 요청을 거절했습니다. 파일 정보나 요청 범위를 확인하세요.</value></data>
+  <data name="AiInvalidResponse" xml:space="preserve"><value>파일별 결과가 누락되거나 형식이 잘못되어 표시하지 않았습니다. 자동 재시도하지 않았습니다.</value></data>
+  <data name="CategorySelector.Header" xml:space="preserve"><value>파일 종류</value></data>
+  <data name="CategoryAll.Content" xml:space="preserve"><value>전체</value></data>
+  <data name="CategoryDocument.Content" xml:space="preserve"><value>문서</value></data>
+  <data name="CategoryImage.Content" xml:space="preserve"><value>사진·이미지</value></data>
+  <data name="CategoryMedia.Content" xml:space="preserve"><value>동영상·음악</value></data>
+  <data name="CategoryArchive.Content" xml:space="preserve"><value>압축파일</value></data>
+  <data name="CategoryApplication.Content" xml:space="preserve"><value>설치·실행파일</value></data>
+  <data name="CategoryOther.Content" xml:space="preserve"><value>기타</value></data>
+  <data name="FilteredFileCount" xml:space="preserve"><value>파일 목록 ({0}개 표시 / 전체 {1}개)</value></data>
+  <data name="FilterEmptyTitle" xml:space="preserve"><value>이 종류의 파일이 없습니다</value></data>
+  <data name="FilterEmptyHint" xml:space="preserve"><value>다른 종류나 ‘전체’를 선택해주세요. 하위 폴더는 포함하지 않습니다.</value></data>
+  <data name="FilterNotice.Text" xml:space="preserve"><value>확장자 기준 분류입니다. 종류를 바꾸면 선택과 이전 분석 결과가 초기화됩니다.</value></data>
+  <data name="SelectFilesButton.Content" xml:space="preserve"><value>파일 선택</value></data>
+  <data name="SourceChoiceHint.Text" xml:space="preserve"><value>파일을 보며 직접 고르려면 ‘파일 선택’, 폴더 전체를 불러오려면 ‘폴더 선택’을 누르세요.</value></data>
+  <data name="PickFilesCommit" xml:space="preserve"><value>선택한 파일 불러오기</value></data>
+  <data name="PickedFilesStatus" xml:space="preserve"><value>직접 선택한 파일 {0}개 · 이전 목록을 교체했습니다.</value></data>
+  <data name="PickFilesFailed" xml:space="preserve"><value>파일을 불러오지 못했습니다. 이전 목록은 유지됩니다. 파일 위치와 접근 권한을 확인해주세요.</value></data>
+  <data name="InclusionSummary" xml:space="preserve"><value>분석 포함 {0}개 · 제외 {1}개 · 최대 {2}개 분석</value></data>
+  <data name="InclusionHint.Text" xml:space="preserve"><value>체크하면 이번 분석에 포함합니다. 해제한 파일도 목록에는 남으며 삭제되지 않습니다.</value></data>
+  <data name="PreviewFileDetails" xml:space="preserve"><value>확장자: {0} · 크기: {1}&#10;수정일(로컬): {2}</value></data>
+  <data name="PreviewNoExtension" xml:space="preserve"><value>확장자 없음</value></data>
+  <data name="PreviewRawJson" xml:space="preserve"><value>전송 원본 보기 (JSON)</value></data>
 </root>

@@ -38,9 +38,15 @@
                         <TextBlock x:Uid="FolderSectionTitle" FontWeight="SemiBold" />
                         <TextBlock x:Name="StatusText" x:Uid="FolderStatus" TextWrapping="Wrap" IsTextSelectionEnabled="True"
                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                        <TextBlock x:Uid="SourceChoiceHint" FontSize="12" TextWrapping="Wrap"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                     </StackPanel>
-                    <Button Grid.Column="1" x:Uid="SelectFolderButton" Padding="20,10" VerticalAlignment="Center"
-                            Style="{StaticResource AccentButtonStyle}" Click="SelectFolder_Click" />
+                    <StackPanel Grid.Column="1" Spacing="8" VerticalAlignment="Center">
+                        <Button x:Name="SelectFilesAction" x:Uid="SelectFilesButton" Padding="20,10" HorizontalAlignment="Stretch"
+                                Style="{StaticResource AccentButtonStyle}" Click="SelectFiles_Click" />
+                        <Button x:Name="SelectFolderAction" x:Uid="SelectFolderButton" Padding="20,10" HorizontalAlignment="Stretch"
+                                Click="SelectFolder_Click" />
+                    </StackPanel>
                 </Grid>
             </Border>
             <Border Grid.Row="2" CornerRadius="12" BorderThickness="1"
@@ -52,13 +58,26 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid Margin="20,16" ColumnSpacing="16">
+                    <Grid Margin="20,16" ColumnSpacing="16" RowSpacing="12">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Header, ElementName=FileList}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" />
-                        <ComboBox Grid.Column="1" x:Name="SortSelector" x:Uid="SortSelector" SelectedIndex="0" IsEnabled="False" Width="236">
+                        <TextBlock Grid.ColumnSpan="2" Text="{Binding Header, ElementName=FileList}" FontSize="18" FontWeight="SemiBold" VerticalAlignment="Center" />
+                        <ComboBox Grid.Row="1" x:Name="CategorySelector" x:Uid="CategorySelector" SelectedIndex="0" IsEnabled="False" Width="220">
+                            <ComboBoxItem x:Uid="CategoryAll" />
+                            <ComboBoxItem x:Uid="CategoryDocument" />
+                            <ComboBoxItem x:Uid="CategoryImage" />
+                            <ComboBoxItem x:Uid="CategoryMedia" />
+                            <ComboBoxItem x:Uid="CategoryArchive" />
+                            <ComboBoxItem x:Uid="CategoryApplication" />
+                            <ComboBoxItem x:Uid="CategoryOther" />
+                        </ComboBox>
+                        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="SortSelector" x:Uid="SortSelector" SelectedIndex="0" IsEnabled="False" Width="236">
                             <ComboBoxItem x:Uid="SortByName" />
                             <ComboBoxItem x:Uid="SortBySize" />
                             <ComboBoxItem x:Uid="SortByModified" />
@@ -77,7 +96,8 @@
                         </Grid>
                     </Border>
                     <Grid Grid.Row="2">
-                        <ListView x:Name="FileList" x:Uid="FileList" SelectionMode="None" Padding="8,4,24,4" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView x:Name="FileList" x:Uid="FileList" SelectionMode="Multiple" IsMultiSelectCheckBoxEnabled="False"
+                                  Padding="8,4,24,4" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <!-- The file count is displayed in the fixed toolbar. -->
                             <ListView.HeaderTemplate><DataTemplate><Grid Height="0" /></DataTemplate></ListView.HeaderTemplate>
                             <ListView.ItemContainerStyle>
@@ -97,7 +117,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid ColumnSpacing="10">
                                             <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
-                                            <FontIcon Glyph="&#xE8A5;" FontSize="16" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            <CheckBox MinWidth="24" MinHeight="32" VerticalAlignment="Center"
+                                                      IsChecked="{x:Bind IsIncluded, Mode=OneWay}" Tag="{x:Bind}"
+                                                      Click="FileIncluded_Click" AutomationProperties.Name="{x:Bind Name}"
+                                                      ToolTipService.ToolTip="{x:Bind Name}" />
                                             <TextBlock Grid.Column="1" Text="{x:Bind Name}" TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{x:Bind Name}" VerticalAlignment="Center" />
                                         </Grid>
                                         <TextBlock Grid.Column="1" Text="{x:Bind SizeText}" TextAlignment="Right" VerticalAlignment="Center" />
@@ -109,12 +132,27 @@
                         </ListView>
                         <StackPanel x:Name="EmptyState" Spacing="12" Margin="24" VerticalAlignment="Center" HorizontalAlignment="Center" IsHitTestVisible="False">
                             <FontIcon Glyph="&#xE8B7;" FontSize="32" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
-                            <TextBlock x:Uid="EmptyListTitle" FontSize="16" FontWeight="SemiBold" TextAlignment="Center" />
-                            <TextBlock x:Uid="EmptyListHint" TextWrapping="Wrap" TextAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                            <TextBlock x:Name="EmptyTitle" x:Uid="EmptyListTitle" FontSize="16" FontWeight="SemiBold" TextAlignment="Center" />
+                            <TextBlock x:Name="EmptyHint" x:Uid="EmptyListHint" TextWrapping="Wrap" TextAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                         </StackPanel>
                     </Grid>
                     <Border Grid.Row="3" Padding="20,12" BorderThickness="0,1,0,0" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
-                        <TextBlock x:Uid="ReadOnlyNote" FontSize="12" TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                        <StackPanel Spacing="10">
+                            <TextBlock x:Name="SelectionSummary" TextWrapping="Wrap" />
+                            <TextBlock x:Uid="InclusionHint" FontSize="12" TextWrapping="Wrap" />
+                            <TextBlock x:Uid="FilterNotice" FontSize="12" TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <Button x:Name="PreviewButton" x:Uid="PreviewButton" IsEnabled="False"
+                                        Click="Preview_Click" Style="{StaticResource AccentButtonStyle}" />
+                                <Button x:Name="ClearSelectionButton" x:Uid="ClearSelectionButton" IsEnabled="False"
+                                        Click="ClearSelection_Click" />
+                                <Button x:Name="ResultsButton" x:Uid="ResultsButton" IsEnabled="False" Click="Results_Click" />
+                                <Button x:Name="CancelAnalysisButton" x:Uid="CancelAnalysisButton" Visibility="Collapsed" Click="CancelAnalysis_Click" />
+                            </StackPanel>
+                            <TextBlock x:Name="AnalysisStatus" TextWrapping="Wrap" />
+                            <TextBlock x:Uid="PreviewLocalOnly" FontSize="12" TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                            <TextBlock x:Uid="ReadOnlyNote" FontSize="12" TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                        </StackPanel>
                     </Border>
                 </Grid>
             </Border>

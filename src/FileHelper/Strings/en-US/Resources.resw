@@ -9,7 +9,7 @@
     <value>Select folder</value>
   </data>
   <data name="FolderStatus.Text" xml:space="preserve">
-    <value>No folder selected yet.</value>
+    <value>Choose files or a folder.</value>
   </data>
   <data name="FileList.Header" xml:space="preserve">
     <value>Files</value>
@@ -45,8 +45,68 @@ There are no files directly inside this folder.</value>
   <data name="SortBySize.Content" xml:space="preserve"><value>Size (largest first)</value></data>
   <data name="SortByModified.Content" xml:space="preserve"><value>Modified (newest first)</value></data>
   <data name="PageSubtitle.Text" xml:space="preserve"><value>A clear view of the files in your folder.</value></data>
-  <data name="FolderSectionTitle.Text" xml:space="preserve"><value>Folder to explore</value></data>
+  <data name="FolderSectionTitle.Text" xml:space="preserve"><value>Files to explore</value></data>
   <data name="EmptyListTitle.Text" xml:space="preserve"><value>No files to display</value></data>
-  <data name="EmptyListHint.Text" xml:space="preserve"><value>Choose a folder containing files to see them here.</value></data>
-  <data name="ReadOnlyNote.Text" xml:space="preserve"><value>Only files directly inside the selected folder are shown. Files are not moved or changed.</value></data>
+  <data name="EmptyListHint.Text" xml:space="preserve"><value>Choose individual files or a folder containing files.</value></data>
+  <data name="ReadOnlyNote.Text" xml:space="preserve"><value>Shows chosen files or files directly inside a selected folder. Files are not executed, moved or changed.</value></data>
+  <data name="PreviewButton.Content" xml:space="preserve"><value>Preview AI input</value></data>
+  <data name="ClearSelectionButton.Content" xml:space="preserve"><value>Clear selection</value></data>
+  <data name="PreviewLocalOnly.Text" xml:space="preserve"><value>OpenAI analysis runs only after you review the preview and choose Send. Filenames may contain personal information.</value></data>
+  <data name="PreviewSelectionCount" xml:space="preserve"><value>{0} selected · Preview up to {1} files</value></data>
+  <data name="PreviewLimitExceeded" xml:space="preserve"><value>{0} selected. Select no more than {1} files to preview.</value></data>
+  <data name="PreviewDialogTitle" xml:space="preserve"><value>Preview AI input</value></data>
+  <data name="PreviewPrivacyNotice" xml:space="preserve"><value>Nothing has been sent. Filenames can contain personal names or work details; review them carefully. Closing this window does not send anything.</value></data>
+  <data name="PreviewFieldsNotice" xml:space="preserve"><value>Included: filename, extension, size in bytes, and modified time (local).
+Excluded: full path and file contents. Unavailable values are null.
+This is a snapshot from the last folder load. Only this metadata is sent; file contents are not read.</value></data>
+  <data name="PreviewPayloadHeader" xml:space="preserve"><value>Information for {0} selected files</value></data>
+  <data name="PreviewClose" xml:space="preserve"><value>Close</value></data>
+  <data name="PreviewFailed" xml:space="preserve"><value>Couldn't open the preview. Check your selection and try again.</value></data>
+  <data name="ResultsButton.Content" xml:space="preserve"><value>View results</value></data>
+  <data name="CancelAnalysisButton.Content" xml:space="preserve"><value>Cancel analysis</value></data>
+  <data name="AiLanguage" xml:space="preserve"><value>en</value></data>
+  <data name="AiKeyHeader" xml:space="preserve"><value>API key — this request only; leave blank to use environment</value></data>
+  <data name="AiConsent" xml:space="preserve"><value>Sending shares the metadata above with OpenAI and incurs API charges. Sol · medium · up to 4,096 output tokens; no automatic retries. The app does not save the key or results to disk.</value></data>
+  <data name="AiSend" xml:space="preserve"><value>Send to OpenAI</value></data>
+  <data name="AiDisclaimer" xml:space="preserve"><value>AI estimates from metadata only. These are review priorities, not guarantees that deletion is safe. Check important files and backups yourself.</value></data>
+  <data name="AiWorking" xml:space="preserve"><value>Analyzing… waiting up to about 90 seconds. No automatic retries.</value></data>
+  <data name="AiDone" xml:space="preserve"><value>Analysis complete. View results again without another request.</value></data>
+  <data name="AiResultsTitle" xml:space="preserve"><value>File analysis · AI estimates</value></data>
+  <data name="AiResultLine" xml:space="preserve"><value>[{0}] {1}</value></data>
+  <data name="AiPriority_review" xml:space="preserve"><value>Review candidate</value></data>
+  <data name="AiPriority_keep" xml:space="preserve"><value>Possibly important · low cleanup priority</value></data>
+  <data name="AiPriority_uncertain" xml:space="preserve"><value>Uncertain</value></data>
+  <data name="AiMissingKey" xml:space="preserve"><value>No API key. Reopen the preview and enter a key. Nothing was sent.</value></data>
+  <data name="AiAuthError" xml:space="preserve"><value>Invalid key or insufficient permissions. Check expiry and Responses Write access.</value></data>
+  <data name="AiLimitError" xml:space="preserve"><value>Check balance, usage limits or request rate. No automatic retry was made.</value></data>
+  <data name="AiModelError" xml:space="preserve"><value>Check whether this model is available to your project.</value></data>
+  <data name="AiRequestError" xml:space="preserve"><value>Analysis could not finish. No automatic retry was made. Check usage before requesting again.</value></data>
+  <data name="AiNetworkError" xml:space="preserve"><value>Network failure. The server may have processed the request; check usage before retrying.</value></data>
+  <data name="AiTimeout" xml:space="preserve"><value>The wait timed out. Server processing may continue and charges may apply.</value></data>
+  <data name="AiCancelled" xml:space="preserve"><value>Stopped waiting. Server-side cancellation is not guaranteed and charges may apply.</value></data>
+  <data name="AiIncomplete" xml:space="preserve"><value>The response was incomplete, so no results were displayed. No automatic retry was made.</value></data>
+  <data name="AiRefused" xml:space="preserve"><value>The model declined the request. Review the metadata and request scope.</value></data>
+  <data name="AiInvalidResponse" xml:space="preserve"><value>Missing or invalid file results were not displayed. No automatic retry was made.</value></data>
+  <data name="CategorySelector.Header" xml:space="preserve"><value>File type</value></data>
+  <data name="CategoryAll.Content" xml:space="preserve"><value>All</value></data>
+  <data name="CategoryDocument.Content" xml:space="preserve"><value>Documents</value></data>
+  <data name="CategoryImage.Content" xml:space="preserve"><value>Images</value></data>
+  <data name="CategoryMedia.Content" xml:space="preserve"><value>Video / audio</value></data>
+  <data name="CategoryArchive.Content" xml:space="preserve"><value>Archives</value></data>
+  <data name="CategoryApplication.Content" xml:space="preserve"><value>Installers / executables</value></data>
+  <data name="CategoryOther.Content" xml:space="preserve"><value>Other</value></data>
+  <data name="FilteredFileCount" xml:space="preserve"><value>Files ({0} shown / {1} total)</value></data>
+  <data name="FilterEmptyTitle" xml:space="preserve"><value>No files of this type</value></data>
+  <data name="FilterEmptyHint" xml:space="preserve"><value>Choose another type or All. Subfolders are not included.</value></data>
+  <data name="FilterNotice.Text" xml:space="preserve"><value>Types are based on extensions. Changing type clears selection and previous analysis.</value></data>
+  <data name="SelectFilesButton.Content" xml:space="preserve"><value>Select files</value></data>
+  <data name="SourceChoiceHint.Text" xml:space="preserve"><value>Choose Select files to browse individual files, or Select folder to list a folder.</value></data>
+  <data name="PickFilesCommit" xml:space="preserve"><value>Load selected files</value></data>
+  <data name="PickedFilesStatus" xml:space="preserve"><value>{0} directly selected files · previous list replaced.</value></data>
+  <data name="PickFilesFailed" xml:space="preserve"><value>Could not load the files. The previous list is retained. Check file locations and access permissions.</value></data>
+  <data name="InclusionSummary" xml:space="preserve"><value>Included {0} · Excluded {1} · Analyze up to {2}</value></data>
+  <data name="InclusionHint.Text" xml:space="preserve"><value>Check to include in this analysis. Unchecked files stay in the list and are not deleted.</value></data>
+  <data name="PreviewFileDetails" xml:space="preserve"><value>Extension: {0} · Size: {1}&#10;Modified (local): {2}</value></data>
+  <data name="PreviewNoExtension" xml:space="preserve"><value>No extension</value></data>
+  <data name="PreviewRawJson" xml:space="preserve"><value>View exact payload (JSON)</value></data>
 </root>
